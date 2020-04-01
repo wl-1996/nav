@@ -10,7 +10,7 @@ parcel src/index.html
 
 ``` 
 <!-- 代替命令行：rm -rf dist -->
-<!--代替命令行： parcel src/index.html --no-minify --public-url ./ -->
+<!--代替命令行： parcel build src/index.html --no-minify --public-url ./ -->
 
 yarn build  
 ```
