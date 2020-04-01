@@ -1,172 +1,191 @@
-/* css reset */
+/*css rest*/
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
+
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
+
 img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* style */
 body {
-  background: #eee;
+    background: #eee;
 }
+
 .globalHeader {
-  margin: 20px;
+    margin: 20px;
 }
+
 /* 媒体查询：pc上head与main之间空隙变大点 */
 @media (min-width: 500px) {
-  .globalHeader {
-    margin: 60px 0 80px 0;
-  }
+    .globalHeader {
+        margin: 60px 0 80px 0;
+    }
 }
+
 .searchForm {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 /* 媒体查询 */
 /* 大屏幕上，即最小宽度为500像素时： */
 @media (min-width: 500px) {
-  .searchForm {
-    max-width: 400px;
-    /* 当元素有宽度或者最大宽度时才可以使用margin: 0 auto;但是上下margin会覆盖掉之前的margin，所以最好分开写： */
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .searchForm {
+        max-width: 400px;
+        /* 当元素有宽度或者最大宽度时才可以使用margin: 0 auto;但是上下margin会覆盖掉之前的margin，所以最好分开写： */
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
-/* 小屏幕上，即最大宽度为500像素时：
-@media (max-width: 500px) {
-  .searchForm {
-    background: red;
-  }
-} */
+
 .searchForm input {
-  width: 100%;
-  margin-right: 10px;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+    width: 100%;
+    margin-right: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
+
 .searchForm button {
-  white-space: nowrap;
-  padding: 0 28px;
-  border: none;
-  border-radius: 4px;
-  background: #0282b9;
-  color: #ffffff;
-  font-size: 16px;
+    white-space: nowrap;
+    padding: 0 28px;
+    border: none;
+    border-radius: 4px;
+    background: #0282b9;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .globalMain {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .globalMain .siteList {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: space-between;
 }
+
 /* 媒体查询，在pc端去掉.siteList的margin： */
 @media (min-width: 500px) {
-  .globalMain .siteList {
-    margin-left: 0;
-    margin-right: -25px;
-    justify-content: flex-start;
-  }
+    .globalMain .siteList {
+        margin-left: 0;
+        margin-right: -25px;
+        justify-content: flex-start;
+    }
 }
+
 .globalMain .siteList li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 @media (min-width: 500px) {
-  .siteList li {
-    margin-right: 25px;
-  }
+    .siteList li {
+        margin-right: 25px;
+    }
 }
+
 .globalMain .siteList li .site {
-  width: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 20px 0;
-  position: relative;
-  cursor: pointer;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px 0;
+    position: relative;
+    cursor: pointer;
 }
+
 .globalMain .siteList li .site .logo {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 64px;
-  /* text-transform: uppercase; */
-  /* 用css也可以使字母大写 */
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    /* text-transform: uppercase; */
+    /* 用css也可以使字母大写 */
 }
+
 .globalMain .siteList li .site .link {
-  font-size: 14px;
-  margin-top: 4px;
+    font-size: 14px;
+    margin-top: 4px;
 }
+
 .globalMain .siteList li .site .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  display: none;
-  cursor: default;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    display: none;
+    cursor: default;
 }
+
 .globalMain .siteList li .site:hover .close {
-  display: block;
+    display: block;
 }
+
 /* 调icon-close的大小 */
 .globalMain .siteList li .site .close .icon {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
+
 .globalMain .siteList li .addButton {
-  width: 160px;
-  border: 1px solid #ddd;
-  background: white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
+    width: 160px;
+    border: 1px solid #ddd;
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
 }
+
 .globalMain .siteList li .addButton .icon-wrapper {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .globalMain .siteList li .addButton .text {
-  font-size: 14px;
-  margin-top: 4px;
+    font-size: 14px;
+    margin-top: 4px;
 }
+
 .globalMain .siteList li .addButton .icon-wrapper .icon {
-  width: 56px;
-  height: 56px;
+    width: 56px;
+    height: 56px;
 }
