@@ -149,9 +149,10 @@ var render = function render() {
       console.log("监听成功");
       e.stopPropagation(); //阻止冒泡
 
-      console.log(hashMap); //打印出当前的hashMap
-
       hashMap.splice(index, 1); //splice的两个参数分别表示：从第几个开始删，删掉几个
+
+      window.localStorage.setItem('x', JSON.stringify(hashMap));
+      console.log(hashMap); //打印出当前的hashMap
 
       render(); //删除元素后重新渲染页面
     });
@@ -192,26 +193,28 @@ $(".addButton").on("click", function () {
     logo: simplifyUrl(url)[0].toUpperCase(),
     url: url
   });
+  window.localStorage.setItem('x', JSON.stringify(hashMap));
+  console.log(hashMap); //打印出当前的hashMap
+
   render();
-}); //浏览器本地存储，每次刷新前存储上次数据
-
-window.onbeforeunload = function () {
-  var string = JSON.stringify(hashMap);
-  localStorage.setItem("x", string);
-};
-
+});
 $(document).on("keypress", function (e) {
   // 等价于const key = e.key;表示按下的是键盘上哪个键？把这个键赋值给key
   var key = e.key;
   console.log(key); // 遍历hashMap数组
 
   for (var i = 0; i < hashMap.length; i++) {
-    // 如果hashMap数组的第一个对象的logo属性的小写字母就是key：
+    // 如果hashMap数组的某个对象的logo属性的小写字母就是key：
     if (hashMap[i].logo.toLowerCase() === key) {
       // 那么证明匹配按键成功，就打开按键对应的这个对象的url链接：
       window.open(hashMap[i].url);
     }
   }
+}); //阻止搜索框的keypress事件冒泡到document上，
+// 不阻止的话到冒泡到document上，然后打开对应的网址
+
+$('input').on('keypress', function (e) {
+  e.stopPropagation();
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.f26db941.js.map
+//# sourceMappingURL=main.ec90f515.js.map
